@@ -11,6 +11,12 @@ def lecture_modeles(chemin_dossier):
     return liste_modeles
 
 
+    
 def reconnaissance_chiffre(image, liste_modeles, S):
-    pass
-
+    similitude_max=0
+    index = 0
+    for i in range(len(liste_modeles)-1):
+        if similitude_max <= image.similitude(liste_modeles[i]):
+            similitude_max = image.similitude(liste_modeles[i])
+            index = i
+    return index
